@@ -49,9 +49,26 @@ const dataNumbers = {
     onlyOdd: [] //   Números impares
   }
 };
+for (let i = 0; i < dataNumbers.numbers.length; i++) {
+  dataNumbers.firstFloor.secondFloor.numbersPlus2.push(dataNumbers.numbers[i] + 2);
+  dataNumbers.firstFloor.thirdFloor.numbersDouble.push(dataNumbers.numbers[i] * 2);
+  dataNumbers.fourthFloor.numbersDividedBy2.push(dataNumbers.numbers[i] / 2);
+  if (dataNumbers.numbers[i] % 2 === 0) {
+    dataNumbers.fifthFloor.onlyEven.push(dataNumbers.numbers[i]);
+  } else {
+    dataNumbers.fifthFloor.onlyOdd.push(dataNumbers.numbers[i]);
+  }
+}
+
+console.log(dataNumbers.firstFloor.secondFloor.numbersPlus2);
+console.log(dataNumbers.firstFloor.thirdFloor.numbersDouble);
+console.log(dataNumbers.fourthFloor.numbersDividedBy2);
+console.log(dataNumbers.fifthFloor.onlyEven);
+console.log(dataNumbers.fifthFloor.onlyOdd);
 
 //3 - Crea una función que reciba una frase, por ejemplo "Si no estudias acabarás como Enrique", y rellena el objeto con valores que te pide. Revisa la documentación de los strings si hay algo que no sabes obtener.
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt
 
 const dataStrings = {
   firstFloor: {
@@ -79,6 +96,25 @@ const dataStrings = {
     secretCode: ''
   }
 };
+// split viene bien para el 5 fifthfloor
+
+const letters = word => {
+  const vocabulary = 'aeiouAEIOU';
+  for (i = 0; i < word.length; i++) {
+    if (vocabulary.includes(word.charAt(i))) {
+      dataStrings.firstFloor.vowels.push(word.charAt(i));
+    } else {
+      dataStrings.secondFloor.consonants.push(word.charAt(i));
+    }
+    dataStrings.fourthFloor.asciiCode.push(word.charCodeAt(word.indexOf(word.charAt(i))));
+  }
+};
+
+letters('Si no estudias acabarás como Enrique');
+
+console.log(dataStrings.firstFloor.vowels);
+console.log(dataStrings.secondFloor.consonants);
+console.log(dataStrings.fourthFloor.asciiCode);
 
 /* const user = {
   name: 'Anubis',
@@ -109,7 +145,7 @@ for (const friend of userCard.friends) {
   console.log(friend);
 } */
 
-const userCard = {
+/* const userCard = {
   name: 'Anubis',
   email: 'anubis@gmail.com',
   isActive: true,
@@ -121,4 +157,4 @@ const userCard = {
   }
 };
 
-console.log(userCard.address.street.number);
+console.log(userCard.address.street.number); */
