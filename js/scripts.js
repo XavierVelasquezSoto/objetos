@@ -101,12 +101,13 @@ const dataStrings = {
 const letters = word => {
   const vocabulary = 'aeiouAEIOU';
   for (i = 0; i < word.length; i++) {
-    if (vocabulary.includes(word.charAt(i))) {
-      dataStrings.firstFloor.vowels.push(word.charAt(i));
+    const letter = word.charAt(i);
+    if (vocabulary.includes(letter)) {
+      dataStrings.firstFloor.vowels.push(letter);
     } else {
-      dataStrings.secondFloor.consonants.push(word.charAt(i));
+      dataStrings.secondFloor.consonants.push(letter);
     }
-    dataStrings.fourthFloor.asciiCode.push(word.charCodeAt(word.indexOf(word.charAt(i))));
+    dataStrings.fourthFloor.asciiCode.push(word.charCodeAt(word.indexOf(letter)));
   }
 };
 
