@@ -99,16 +99,88 @@ const dataStrings = {
 // split viene bien para el 5 fifthfloor
 
 const letters = word => {
-  const vocabulary = 'aeiouAEIOU';
+  const vowels = 'aeiouAEIOUáéíóú';
+  //const consonant = 'bcdfghjklmnñpqrstvwxyz'
   for (i = 0; i < word.length; i++) {
     const letter = word.charAt(i);
-    if (vocabulary.includes(letter)) {
+    if (vowels.includes(letter)) {
       dataStrings.firstFloor.vowels.push(letter);
     } else {
       dataStrings.secondFloor.consonants.push(letter);
     }
     dataStrings.fourthFloor.asciiCode.push(word.charCodeAt(word.indexOf(letter)));
   }
+
+  let array = word.split(" ")
+  for ( i = 0; i < array.length; i++){
+
+    if (array[i]) {
+      dataStrings.fifthFloor.wordsInUppercase.push(array[i].toUpperCase())
+      dataStrings.fifthFloor.wordsInLowercase.push(array[i].toLowerCase())
+    }
+  }
+
+  dataStrings.sixthFloor.secretCode = word
+  .replaceAll(/a/g, "1")
+  .replaceAll(/e/g, "2")
+  .replaceAll(/i/g, "3")
+  .replaceAll(/o/g, "4")
+  .replaceAll(/u/g, "5")
+  .replaceAll(/A/g, "1")
+  .replaceAll(/E/g, "2")
+  .replaceAll(/I/g, "3")
+  .replaceAll(/O/g, "4")
+  .replaceAll(/U/g, "5")
+  .replaceAll(/á/g, "1")
+  .replaceAll(/é/g, "2")
+  .replaceAll(/í/g, "3")
+  .replaceAll(/ó/g, "4")
+  .replaceAll(/ú/g, "5")
+  .replaceAll(/b/g, "z")
+  .replaceAll(/c/g, "b")
+  .replaceAll(/d/g, "c")
+  .replaceAll(/f/g, "d")
+  .replaceAll(/g/g, "f")
+  .replaceAll(/h/g, "g")
+  .replaceAll(/j/g, "h")
+  .replaceAll(/k/g, "j")
+  .replaceAll(/l/g, "k")
+  .replaceAll(/m/g, "l")
+  .replaceAll(/n/g, "m")
+  .replaceAll(/ñ/g, "n")
+  .replaceAll(/p/g, "ñ")
+  .replaceAll(/q/g, "p")
+  .replaceAll(/r/g, "q")
+  .replaceAll(/s/g, "r")
+  .replaceAll(/t/g, "s")
+  .replaceAll(/v/g, "t")
+  .replaceAll(/w/g, "v")
+  .replaceAll(/x/g, "w")
+  .replaceAll(/y/g, "x")
+  .replaceAll(/z/g, "y")
+  .replaceAll(/B/g, "Z")
+  .replaceAll(/C/g, "B")
+  .replaceAll(/D/g, "C")
+  .replaceAll(/F/g, "D")
+  .replaceAll(/G/g, "F")
+  .replaceAll(/H/g, "G")
+  .replaceAll(/J/g, "H")
+  .replaceAll(/K/g, "J")
+  .replaceAll(/L/g, "K")
+  .replaceAll(/M/g, "L")
+  .replaceAll(/N/g, "M")
+  .replaceAll(/Ñ/g, "N")
+  .replaceAll(/P/g, "Ñ")
+  .replaceAll(/Q/g, "P")
+  .replaceAll(/R/g, "Q")
+  .replaceAll(/S/g, "R")
+  .replaceAll(/T/g, "S")
+  .replaceAll(/V/g, "T")
+  .replaceAll(/W/g, "V")
+  .replaceAll(/X/g, "W")
+  .replaceAll(/Y/g, "X")
+  .replaceAll(/Z/g, "Y")
+  
 };
 
 letters('Si no estudias acabarás como Enrique');
@@ -116,6 +188,35 @@ letters('Si no estudias acabarás como Enrique');
 console.log(dataStrings.firstFloor.vowels);
 console.log(dataStrings.secondFloor.consonants);
 console.log(dataStrings.fourthFloor.asciiCode);
+console.log(dataStrings.fifthFloor.wordsInUppercase);
+console.log(dataStrings.fifthFloor.wordsInLowercase);
+console.log(dataStrings.sixthFloor.secretCode);
+
+
+/*   for ( i = 0; i < word.length; i++){
+    let vowels = word[i]
+
+    if ( vowels === "a" || vowels === "A" || vowels === "á"){
+      dataStrings.sixthFloor.secretCode += '1'
+    }
+    else if ( vowels === "e" || vowels === "E" || vowels === "é"){
+      dataStrings.sixthFloor.secretCode += '2'
+    }
+    else if ( vowels === "i" || vowels === "I" || vowels === "í"){
+      dataStrings.sixthFloor.secretCode += '3'
+    }
+    else if ( vowels === "o" || vowels === "O" || vowels === "ó"){
+      dataStrings.sixthFloor.secretCode += '4'
+    }
+    else if ( vowels === "u" || vowels === "U" || vowels === "ú"){
+      dataStrings.sixthFloor.secretCode += '5'
+    }
+  } */
+
+
+
+
+
 
 /* const user = {
   name: 'Anubis',
