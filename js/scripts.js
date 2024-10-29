@@ -196,26 +196,6 @@ console.log(dataStrings.fifthFloor.wordsInLowercase);
 console.log(dataStrings.sixthFloor.secretCode);
 
 
-/*   for ( i = 0; i < word.length; i++){
-    let vowels = word[i]
-
-    if ( vowels === "a" || vowels === "A" || vowels === "á"){
-      dataStrings.sixthFloor.secretCode += '1'
-    }
-    else if ( vowels === "e" || vowels === "E" || vowels === "é"){
-      dataStrings.sixthFloor.secretCode += '2'
-    }
-    else if ( vowels === "i" || vowels === "I" || vowels === "í"){
-      dataStrings.sixthFloor.secretCode += '3'
-    }
-    else if ( vowels === "o" || vowels === "O" || vowels === "ó"){
-      dataStrings.sixthFloor.secretCode += '4'
-    }
-    else if ( vowels === "u" || vowels === "U" || vowels === "ú"){
-      dataStrings.sixthFloor.secretCode += '5'
-    }
-  } */
-
 
 
 
