@@ -100,7 +100,7 @@ const dataStrings = {
 
 const letters = word => {
   const vowels = 'aeiouAEIOUáéíóú';
-  //const consonant = 'bcdfghjklmnñpqrstvwxyz'
+  
   for (i = 0; i < word.length; i++) {
     const letter = word.charAt(i);
     if (vowels.includes(letter)) {
@@ -119,7 +119,9 @@ const letters = word => {
       dataStrings.fifthFloor.wordsInLowercase.push(array[i].toLowerCase())
     }
   }
-
+  let consonant = 'abcdfeghijklmnñopqrstuvwxyz'
+  let random = Math.floor(Math.random() * consonant.length)
+  
   dataStrings.sixthFloor.secretCode = word
   .replaceAll(/a/g, "1")
   .replaceAll(/e/g, "2")
@@ -180,6 +182,7 @@ const letters = word => {
   .replaceAll(/X/g, "W")
   .replaceAll(/Y/g, "X")
   .replaceAll(/Z/g, "Y")
+  .replaceAll(/ /g, word.charAt(random))
   
 };
 
