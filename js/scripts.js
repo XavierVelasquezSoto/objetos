@@ -97,109 +97,135 @@ const dataStrings = {
   }
 };
 // split viene bien para el 5 fifthfloor
+//const vowels = 'aeiouáéíóúAEIOU';
+/* const getStringInfo = phrase => {
+  const consonants = 'bcdfghjklmnñpqrstvwxyz';
+  let newPhrase = '';
 
-const letters = word => {
+  for (const letter of phrase.toLowerCase()) {
+    if (consonants.includes(letter)) {
+      const index = consonants.indexOf(letter);
+      if (index === 0) {
+        newPhrase = newPhrase + 'z';
+      } else {
+      }
+    } else {
+      newPhrase = newPhrase + letter;
+    }
+  }
+
+  newPhrase = phrase.toLowerCase().replaceAll('a', 1);
+  newPhrase = newPhrase.toLowerCase().replaceAll('á', 1);
+  newPhrase = newPhrase.toLowerCase().replaceAll('e', 2);
+  newPhrase = newPhrase.toLowerCase().replaceAll('é', 2);
+  newPhrase = newPhrase.toLowerCase().replaceAll('i', 3);
+  newPhrase = newPhrase.toLowerCase().replaceAll('í', 3);
+  newPhrase = newPhrase.toLowerCase().replaceAll('o', 4);
+  newPhrase = newPhrase.toLowerCase().replaceAll('ó', 4);
+  newPhrase = newPhrase.toLowerCase().replaceAll('u', 5);
+  newPhrase = newPhrase.toLowerCase().replaceAll('ú', 5);
+
+  console.log(newPhrase);
+};
+
+letters('Estamos viendo objetos');
+
+console.log(dataStrings.sixthFloor.secretCode); */
+
+/* const letters = word => {
   const vowels = 'aeiouAEIOUáéíóú';
-  
+
   for (i = 0; i < word.length; i++) {
     const letter = word.charAt(i);
     if (vowels.includes(letter)) {
       dataStrings.firstFloor.vowels.push(letter);
     } else {
-      dataStrings.secondFloor.consonants.push(letter);
+      dataStrings.secondFloor.consonants.push(letter); // esta mal
     }
     dataStrings.fourthFloor.asciiCode.push(word.charCodeAt(word.indexOf(letter)));
   }
 
-  let array = word.split(" ")
-  for ( i = 0; i < array.length; i++){
-
+  let array = word.split(' ');
+  for (i = 0; i < array.length; i++) {
     if (array[i]) {
-      dataStrings.fifthFloor.wordsInUppercase.push(array[i].toUpperCase())
-      dataStrings.fifthFloor.wordsInLowercase.push(array[i].toLowerCase())
+      dataStrings.fifthFloor.wordsInUppercase.push(array[i].toUpperCase());
+      dataStrings.fifthFloor.wordsInLowercase.push(array[i].toLowerCase());
     }
   }
-  let consonant = 'abcdfeghijklmnñopqrstuvwxyz'
-  let random = Math.floor(Math.random() * consonant.length)
-  
+  let consonant = 'abcdfeghijklmnñopqrstuvwxyz';
+  let random = Math.floor(Math.random() * consonant.length);
+
   dataStrings.sixthFloor.secretCode = word
-  .replaceAll(/a/g, "1")
-  .replaceAll(/e/g, "2")
-  .replaceAll(/i/g, "3")
-  .replaceAll(/o/g, "4")
-  .replaceAll(/u/g, "5")
-  .replaceAll(/A/g, "1")
-  .replaceAll(/E/g, "2")
-  .replaceAll(/I/g, "3")
-  .replaceAll(/O/g, "4")
-  .replaceAll(/U/g, "5")
-  .replaceAll(/á/g, "1")
-  .replaceAll(/é/g, "2")
-  .replaceAll(/í/g, "3")
-  .replaceAll(/ó/g, "4")
-  .replaceAll(/ú/g, "5")
-  .replaceAll(/b/g, "z")
-  .replaceAll(/c/g, "b")
-  .replaceAll(/d/g, "c")
-  .replaceAll(/f/g, "d")
-  .replaceAll(/g/g, "f")
-  .replaceAll(/h/g, "g")
-  .replaceAll(/j/g, "h")
-  .replaceAll(/k/g, "j")
-  .replaceAll(/l/g, "k")
-  .replaceAll(/m/g, "l")
-  .replaceAll(/n/g, "m")
-  .replaceAll(/ñ/g, "n")
-  .replaceAll(/p/g, "ñ")
-  .replaceAll(/q/g, "p")
-  .replaceAll(/r/g, "q")
-  .replaceAll(/s/g, "r")
-  .replaceAll(/t/g, "s")
-  .replaceAll(/v/g, "t")
-  .replaceAll(/w/g, "v")
-  .replaceAll(/x/g, "w")
-  .replaceAll(/y/g, "x")
-  .replaceAll(/z/g, "y")
-  .replaceAll(/B/g, "Z")
-  .replaceAll(/C/g, "B")
-  .replaceAll(/D/g, "C")
-  .replaceAll(/F/g, "D")
-  .replaceAll(/G/g, "F")
-  .replaceAll(/H/g, "G")
-  .replaceAll(/J/g, "H")
-  .replaceAll(/K/g, "J")
-  .replaceAll(/L/g, "K")
-  .replaceAll(/M/g, "L")
-  .replaceAll(/N/g, "M")
-  .replaceAll(/Ñ/g, "N")
-  .replaceAll(/P/g, "Ñ")
-  .replaceAll(/Q/g, "P")
-  .replaceAll(/R/g, "Q")
-  .replaceAll(/S/g, "R")
-  .replaceAll(/T/g, "S")
-  .replaceAll(/V/g, "T")
-  .replaceAll(/W/g, "V")
-  .replaceAll(/X/g, "W")
-  .replaceAll(/Y/g, "X")
-  .replaceAll(/Z/g, "Y")
-  .replaceAll(/ /g, word.charAt(random))
-  
+    .replaceAll(/a/g, '1')
+    .replaceAll(/e/g, '2')
+    .replaceAll(/i/g, '3')
+    .replaceAll(/o/g, '4')
+    .replaceAll(/u/g, '5')
+    .replaceAll(/A/g, '1')
+    .replaceAll(/E/g, '2')
+    .replaceAll(/I/g, '3')
+    .replaceAll(/O/g, '4')
+    .replaceAll(/U/g, '5')
+    .replaceAll(/á/g, '1')
+    .replaceAll(/é/g, '2')
+    .replaceAll(/í/g, '3')
+    .replaceAll(/ó/g, '4')
+    .replaceAll(/ú/g, '5')
+    .replaceAll(/b/g, 'z')
+    .replaceAll(/c/g, 'b')
+    .replaceAll(/d/g, 'c')
+    .replaceAll(/f/g, 'd')
+    .replaceAll(/g/g, 'f')
+    .replaceAll(/h/g, 'g')
+    .replaceAll(/j/g, 'h')
+    .replaceAll(/k/g, 'j')
+    .replaceAll(/l/g, 'k')
+    .replaceAll(/m/g, 'l')
+    .replaceAll(/n/g, 'm')
+    .replaceAll(/ñ/g, 'n')
+    .replaceAll(/p/g, 'ñ')
+    .replaceAll(/q/g, 'p')
+    .replaceAll(/r/g, 'q')
+    .replaceAll(/s/g, 'r')
+    .replaceAll(/t/g, 's')
+    .replaceAll(/v/g, 't')
+    .replaceAll(/w/g, 'v')
+    .replaceAll(/x/g, 'w')
+    .replaceAll(/y/g, 'x')
+    .replaceAll(/z/g, 'y')
+    .replaceAll(/B/g, 'Z')
+    .replaceAll(/C/g, 'B')
+    .replaceAll(/D/g, 'C')
+    .replaceAll(/F/g, 'D')
+    .replaceAll(/G/g, 'F')
+    .replaceAll(/H/g, 'G')
+    .replaceAll(/J/g, 'H')
+    .replaceAll(/K/g, 'J')
+    .replaceAll(/L/g, 'K')
+    .replaceAll(/M/g, 'L')
+    .replaceAll(/N/g, 'M')
+    .replaceAll(/Ñ/g, 'N')
+    .replaceAll(/P/g, 'Ñ')
+    .replaceAll(/Q/g, 'P')
+    .replaceAll(/R/g, 'Q')
+    .replaceAll(/S/g, 'R')
+    .replaceAll(/T/g, 'S')
+    .replaceAll(/V/g, 'T')
+    .replaceAll(/W/g, 'V')
+    .replaceAll(/X/g, 'W')
+    .replaceAll(/Y/g, 'X')
+    .replaceAll(/Z/g, 'Y')
+    .replaceAll(/ /g, word.charAt(random));
 };
 
-letters('Si no estudias acabarás como Enrique');
+letters('Estamos viendo objetos');
 
 console.log(dataStrings.firstFloor.vowels);
 console.log(dataStrings.secondFloor.consonants);
 console.log(dataStrings.fourthFloor.asciiCode);
 console.log(dataStrings.fifthFloor.wordsInUppercase);
 console.log(dataStrings.fifthFloor.wordsInLowercase);
-console.log(dataStrings.sixthFloor.secretCode);
-
-
-
-
-
-
+console.log(dataStrings.sixthFloor.secretCode); */
 
 /* const user = {
   name: 'Anubis',
@@ -243,3 +269,45 @@ for (const friend of userCard.friends) {
 };
 
 console.log(userCard.address.street.number); */
+
+/* const newPhrase = phrase.toLowerCase().replaceAll('a',1).replaceAll('á',1).replaceAll('e',1).replaceAll('é',1).replaceAll('i',1).replaceAll('í',1).replaceAll('o',1).replaceAll('ó',1).replaceAll('u',1); */
+
+// - CREA UNA FUNCIÓN QUE RECIBA UNA PALABRA
+// - HAZ QUE LA FUNCIÓN SUSTITUYA CADA POR SU VOCAL ANTERIOR EN EL ABECEDARIO
+// - HAZ QUE CADA CONSONANTE SE SUSTITUYA POR LA LETRA EN 2 POSICIONES SIGUIENTES
+// - HAZ QUE RECIBA UNA FRASE EN EL LUGAR DE UNA PALABRA, SUSTITUYE CADA ESPACIO POR UN NÚMERO ENTRE 0 Y 10
+// - SI ALGUNA VOCAL ACENTUADA, SE SUSTITUIRÁ POR *
+// - SI ALGUNA CONSONANTE ES UNA Ñ SE SUSTITUIRA POR UN $
+
+const receiverWord = phrase => {
+  const vocabulary = 'aeiouáéíóúAEIOU';
+  const vocabulary2 = 'abcdefghijklmnñopqrtuvwxyz';
+  let stringVoid = '';
+
+  for (i = 0; i < phrase.length; i++) {
+    if (vocabulary.includes(phrase[i])) {
+      //vocal
+      if (phrase[i] === 'a') {
+        stringVoid += 'z';
+      } else {
+        stringVoid += vocabulary2.charAt(vocabulary2.indexOf(phrase[i]) - 1);
+      }
+    } else {
+      // si no es vocal
+      if (phrase[i] === 'y') {
+        stringVoid += 'a';
+      } else if (phrase[i] === 'z') {
+        stringVoid += 'b';
+      } else {
+        stringVoid += vocabulary2.charAt(vocabulary2.indexOf(phrase[i]) + 2);
+      }
+    }
+    if (phrase[i] === ' ') {
+      stringVoid += Math.floor(Math.random() * 10);
+    }
+  }
+
+  console.log(stringVoid);
+};
+
+receiverWord('mis hobbies son leer');
