@@ -97,18 +97,50 @@ const dataStrings = {
   }
 };
 // split viene bien para el 5 fifthfloor
+//const vowels = 'aeiouáéíóúAEIOU';
+/* const getStringInfo = phrase => {
+  const consonants = 'bcdfghjklmnñpqrstvwxyz';
+  let newPhrase = '';
 
+  for (const letter of phrase.toLowerCase()) {
+    if (consonants.includes(letter)) {
+      const index = consonants.indexOf(letter);
+      if (index === 0) {
+        newPhrase = newPhrase + 'z';
+      } else {
+      }
+    } else {
+      newPhrase = newPhrase + letter;
+    }
+  }
 
-const letters = word => {
+  newPhrase = phrase.toLowerCase().replaceAll('a', 1);
+  newPhrase = newPhrase.toLowerCase().replaceAll('á', 1);
+  newPhrase = newPhrase.toLowerCase().replaceAll('e', 2);
+  newPhrase = newPhrase.toLowerCase().replaceAll('é', 2);
+  newPhrase = newPhrase.toLowerCase().replaceAll('i', 3);
+  newPhrase = newPhrase.toLowerCase().replaceAll('í', 3);
+  newPhrase = newPhrase.toLowerCase().replaceAll('o', 4);
+  newPhrase = newPhrase.toLowerCase().replaceAll('ó', 4);
+  newPhrase = newPhrase.toLowerCase().replaceAll('u', 5);
+  newPhrase = newPhrase.toLowerCase().replaceAll('ú', 5);
+
+  console.log(newPhrase);
+};
+
+letters('Estamos viendo objetos');
+
+console.log(dataStrings.sixthFloor.secretCode); */
+
+/* const letters = word => {
   const vowels = 'aeiouAEIOUáéíóú';
-  const consonants1 = "bcdfghjklmnñpqrstvwxyzBCDFGHJKLMNÑPQRSTVWXYZ"
 
   for (i = 0; i < word.length; i++) {
     const letter = word.charAt(i);
     if (vowels.includes(letter)) {
       dataStrings.firstFloor.vowels.push(letter);
-    } else if (consonants1.includes(letter)) {
-      dataStrings.secondFloor.consonants.push(letter); 
+    } else {
+      dataStrings.secondFloor.consonants.push(letter); // esta mal
     }
     dataStrings.fourthFloor.asciiCode.push(word.charCodeAt(word.indexOf(letter)));
   }
@@ -120,12 +152,11 @@ const letters = word => {
       dataStrings.fifthFloor.wordsInLowercase.push(array[i].toLowerCase());
     }
   }
-  let consonants2 = 'abcdfeghijklmnñopqrstuvwxyz';
-  let random = Math.floor(Math.random() * consonants2.length);
-  let newPhrase = ""
+  let consonant = 'abcdfeghijklmnñopqrstuvwxyz';
+  let random = Math.floor(Math.random() * consonant.length);
 
-   dataStrings.sixthFloor.secretCode = newPhrase
-    /*.replaceAll(/a/g, '1')
+  dataStrings.sixthFloor.secretCode = word
+    .replaceAll(/a/g, '1')
     .replaceAll(/e/g, '2')
     .replaceAll(/i/g, '3')
     .replaceAll(/o/g, '4')
@@ -184,7 +215,7 @@ const letters = word => {
     .replaceAll(/X/g, 'W')
     .replaceAll(/Y/g, 'X')
     .replaceAll(/Z/g, 'Y')
-    .replaceAll(/ /g, word.charAt(random)); */
+    .replaceAll(/ /g, word.charAt(random));
 };
 
 letters('Estamos viendo objetos');
@@ -194,7 +225,7 @@ console.log(dataStrings.secondFloor.consonants);
 console.log(dataStrings.fourthFloor.asciiCode);
 console.log(dataStrings.fifthFloor.wordsInUppercase);
 console.log(dataStrings.fifthFloor.wordsInLowercase);
-console.log(dataStrings.sixthFloor.secretCode);
+console.log(dataStrings.sixthFloor.secretCode); */
 
 /* const user = {
   name: 'Anubis',
@@ -331,40 +362,3 @@ receiverWord('Al leer el pequeño cuento, entendí cómo influye en nuestra cult
 };
 
 receiverWord('Al leer el pequeño cuento, entendí cómo influye en nuestra cultura'); */
-
-
-
-//const vowels = 'aeiouáéíóúAEIOU';
-/* const getStringInfo = phrase => {
-  const consonants = 'bcdfghjklmnñpqrstvwxyz';
-  let newPhrase = '';
-
-  for (const letter of phrase.toLowerCase()) {
-    if (consonants.includes(letter)) {
-      const index = consonants.indexOf(letter);
-      if (index === 0) {
-        newPhrase = newPhrase + 'z';
-      } else {
-      }
-    } else {
-      newPhrase = newPhrase + letter;
-    }
-  }
-
-  newPhrase = phrase.toLowerCase().replaceAll('a', 1);
-  newPhrase = newPhrase.toLowerCase().replaceAll('á', 1);
-  newPhrase = newPhrase.toLowerCase().replaceAll('e', 2);
-  newPhrase = newPhrase.toLowerCase().replaceAll('é', 2);
-  newPhrase = newPhrase.toLowerCase().replaceAll('i', 3);
-  newPhrase = newPhrase.toLowerCase().replaceAll('í', 3);
-  newPhrase = newPhrase.toLowerCase().replaceAll('o', 4);
-  newPhrase = newPhrase.toLowerCase().replaceAll('ó', 4);
-  newPhrase = newPhrase.toLowerCase().replaceAll('u', 5);
-  newPhrase = newPhrase.toLowerCase().replaceAll('ú', 5);
-
-  console.log(newPhrase);
-};
-
-letters('Estamos viendo objetos');
-
-console.log(dataStrings.sixthFloor.secretCode); */
